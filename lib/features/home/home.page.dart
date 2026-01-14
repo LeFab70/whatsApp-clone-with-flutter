@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+import 'package:whatsapp_clone/shared/widgets/favorite.section.dart';
 import 'package:whatsapp_clone/shared/widgets/menu.section.dart';
+import 'package:whatsapp_clone/shared/widgets/message.section.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,8 +20,8 @@ class HomePage extends StatelessWidget {
         //pour les sections
         children: [
           MenuSection(),
-          Container(height: 100, color: WhatsAppColors.greenLight),
-          Expanded(child: Container(color: WhatsAppColors.receiverBubble)),
+          FavoriteSection(),
+          MessageSection()
         ],
       ),
       floatingActionButton: FloatingActionButton(

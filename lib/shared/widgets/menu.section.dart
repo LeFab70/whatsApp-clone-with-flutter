@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+
 
 class MenuSection extends StatelessWidget {
   final List<Map<String, dynamic>> menuItems = [
@@ -27,18 +29,17 @@ class MenuSection extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(item["icon"],color: WhatsAppColors.greenLight,),
-                    const SizedBox(height: 8,),// Espace entre icône et texte
+                    Icon(item["icon"], color: WhatsAppColors.greenLight),
+                    const SizedBox(height: 8), // Espace entre icône et texte
                     Text(
                       item["text"],
-                      style: TextStyle(
-                        color: WhatsAppColors.textWhites,
-                        fontSize: 18,
+                      style: GoogleFonts.inter(
+                        color: Colors.white60,
+                        fontSize: 20
                       ),
                     ),
-
                   ],
-                )
+                ),
               );
             }).toList(),
           ),
