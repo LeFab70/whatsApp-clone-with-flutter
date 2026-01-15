@@ -16,7 +16,7 @@ class BottomAppBars extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: WhatsAppColors.receiverBubble,
+                  color: Colors.grey.shade100,
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(

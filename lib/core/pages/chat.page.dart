@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
 import 'package:whatsapp_clone/shared/widgets/bottom.app.bar.dart';
+import 'package:whatsapp_clone/shared/widgets/chat.bubble.dart';
 
 class ChatPage extends StatelessWidget {
   final Map<String, dynamic> chapData;
@@ -12,9 +13,12 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        }, icon: Icon(Icons.arrow_back_ios)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.arrow_back_ios),
+        ),
         foregroundColor: Colors.white,
         centerTitle: false,
         titleSpacing: 0,
@@ -65,22 +69,30 @@ class ChatPage extends StatelessWidget {
         ],
       ),
       body: Container(
-
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(left: 15, top: 10,right: 5),
-        decoration: BoxDecoration(
-          shape: BoxShape.rectangle,
-          color: WhatsAppColors.greyText,
-          borderRadius: BorderRadius.all(Radius.circular(8)),
-        ),
-        child: Text(
-          chapData['message'],
-          style: GoogleFonts.inter(
-            fontWeight: FontWeight.w800,
-            fontSize: 18,
-            color: WhatsAppColors.textWhites,
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/whatsapp_bg.png"),
+            // Ton image de fond
+            fit: BoxFit.cover,
+            opacity: 0.06, // Très léger pour ne pas gêner la lecture
           ),
-         softWrap: true,
+        ),
+        child: ListView(
+          padding: const EdgeInsets.only(top: 10, bottom: 20),
+          children: [
+            ChatBubble(
+              message: chapData["message"],
+              date: chapData['date'],
+              isMe: false,
+            ),
+            const ChatBubble(
+              message: "Oui, je suis en train de finaliser la partie Body ! 🚀",
+              date: "16:40",
+              isMe: true,
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomAppBars(),

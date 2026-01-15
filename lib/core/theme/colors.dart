@@ -11,6 +11,6 @@ class WhatsAppColors {
   static const Color greyText = Color(0xFF8696A0);
 
   // Couleur pour les bulles de message
-  static const Color senderBubble = Color(0xFFE7FFDB);
-  static const Color receiverBubble = Colors.white;
+  static const Color senderBubble = Color(0xFF005C4B);
+  static const Color receiverBubble = Color(0xFF37474F);
 }
