@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+import 'package:whatsapp_clone/shared/widgets/bottom.app.bar.dart';
 
 class ChatPage extends StatelessWidget {
   final Map<String, dynamic> chapData;
@@ -11,6 +12,9 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: (){
+          Navigator.of(context).pop();
+        }, icon: Icon(Icons.arrow_back_ios)),
         foregroundColor: Colors.white,
         centerTitle: false,
         titleSpacing: 0,
@@ -79,6 +83,7 @@ class ChatPage extends StatelessWidget {
          softWrap: true,
         ),
       ),
+      bottomNavigationBar: BottomAppBars(),
     );
   }
 }
