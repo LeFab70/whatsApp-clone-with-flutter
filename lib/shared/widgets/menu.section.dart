@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+import 'package:whatsapp_clone/data/others/menu.list.dart';
 
 
 class MenuSection extends StatelessWidget {
-  final List<Map<String, dynamic>> menuItems = [
-    {"text": "Messages", "icon": Icons.chat},
-    {"text": "Online", "icon": Icons.lens},
-    {"text": "Groups", "icon": Icons.group},
-    {"text": "Calls", "icon": Icons.call},
-  ];
+  final List<Map<String, dynamic>> menuItems = MenuList.menuItems;
 
   MenuSection({super.key});
 

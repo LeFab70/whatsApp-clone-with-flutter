@@ -1,22 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
+import 'package:whatsapp_clone/data/others/favorites.list.dart';
 
 class FavoriteSection extends StatelessWidget {
-  final List<Map<String, dynamic>> favoritesProfiles = [
-    {'name': 'LeFab', 'profile': 'assets/avatar/user1.png'},
-    {'name': 'Regine', 'profile': 'assets/avatar/user1.png'},
-    {'name': 'Andy', 'profile': 'assets/avatar/user3.png'},
-    {'name': 'Cyrianne', 'profile': 'assets/avatar/user4.png'},
-    {'name': 'Marc', 'profile': 'assets/avatar/user1.png'},
-    {'name': 'Sophie', 'profile': 'assets/avatar/user3.png'},
-    {'name': 'Lucas', 'profile': 'assets/avatar/user4.png'},
-    {'name': 'Emma', 'profile': 'assets/avatar/user1.png'},
-    {'name': 'Thomas', 'profile': 'assets/avatar/user3.png'},
-    {'name': 'Julie', 'profile': 'assets/avatar/user4.png'},
-  ];
+  final List<Map<String, dynamic>> favoritesProfiles = FavoritesList.favoritesProfiles;
 
   FavoriteSection({super.key});
+
 
   @override
   Widget build(BuildContext context) {
