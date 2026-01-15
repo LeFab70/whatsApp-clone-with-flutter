@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:whatsapp_clone/core/pages/chat.page.dart';
 import 'package:whatsapp_clone/core/theme/colors.dart';
 import 'package:whatsapp_clone/data/others/messages.list.dart';
 
@@ -19,7 +20,9 @@ class MessageSection extends StatelessWidget {
           return InkWell(
             highlightColor: WhatsAppColors.greenPrimary,
             splashColor: WhatsAppColors.greenLight,
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatPage(chapData: message,)));
+            },
             child: Container(
               padding: EdgeInsets.only(left: 10, right: 10, top: 15),
               child: Row(
